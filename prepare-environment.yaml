@@ -1,10 +1,8 @@
 name: publish
 
-jobs:
-  build:
-    name: Cloud Run Deployment
-    runs-on: ubuntu-latest
-    steps:
+runs:
+  using: "composite"
+   steps:
       - name: Setup GCP Service Account
         uses: google-github-actions/setup-gcloud@master
         with:
