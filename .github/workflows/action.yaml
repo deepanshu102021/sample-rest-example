@@ -16,12 +16,13 @@ jobs:
         with:
           repository: deepanshu102021/github-actions
           token: ${{ secrets.GIT_TOKEN }}
+          path: .github/actions/
 
       - name: Setup GCP Service Account
-        uses: ./prepare-environment.yaml
+        uses: ./.github/actions/prepare-environment/
 
       - name: Containerize application and push to registry
-        uses: ./containerisation.yaml
+        uses: ./.github/actions/containerization/
       
       - name: Deployment
-        uses: ./deploy.yaml
+        uses: ./.github/actions/deploy
