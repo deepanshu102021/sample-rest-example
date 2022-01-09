@@ -1,11 +1,8 @@
 name: publish
 
-jobs:
-  build:
-    name: Cloud Run Deployment
-    runs-on: ubuntu-latest
-    steps:
-
+runs:
+  using: "composite"
+  steps:
       - name: Deploy
         run: |
           gcloud run deploy java-rest-service-example \
