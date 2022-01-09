@@ -2,6 +2,9 @@ name: publish
 
 on: [push]
 
+env:
+  PROJECT_NAME: ecstatic-night-329312
+
 jobs:
   build:
     name: Cloud Run Deployment
